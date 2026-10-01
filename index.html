@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Solstício Hotéis: quatro endereços de luxo no Brasil e em Portugal, desenhados em torno da luz natural.">
+<title>Solstício Hotéis | Hospitalidade de luxo</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Jost:wght@300;400;500&display=swap">
+<style>
+:root{
+  --bg:#F5F6F3; --surface:#FFFFFF; --ink:#12262A; --muted:#51666A;
+  --deep:#0E2A30; --sea:#BCD3CC; --brass:#A97F3F; --line:#D5DDDA;
+  --on-deep:#EAF1EE;
+  --serif:"Cormorant Garamond",Georgia,"Times New Roman",serif;
+  --sans:"Jost","Helvetica Neue",Arial,sans-serif;
+  box-sizing:border-box; padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){--bg:#0A1B1F;--surface:#102A30;--ink:#E7EFEC;--muted:#9FB4B3;--line:#24424A;--brass:#D2A862}
+}
+:root[data-theme="dark"]{--bg:#0A1B1F;--surface:#102A30;--ink:#E7EFEC;--muted:#9FB4B3;--line:#24424A;--brass:#D2A862}
+html{scroll-behavior:smooth;scroll-padding-top:calc(76px + env(safe-area-inset-top,0px))}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:300 1.0625rem/1.7 var(--sans)}
+h1,h2,h3{font-family:var(--serif);font-weight:500;line-height:1.1;margin:0 0 .5em;letter-spacing:-.01em}
+h2{font-size:clamp(2rem,4.5vw,3.25rem)}
+h3{font-size:1.75rem}
+p{margin:0 0 1em;max-width:62ch}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--brass);outline-offset:3px}
+.skip{position:absolute;left:-999px;top:0;background:var(--brass);color:#fff;padding:.6rem 1rem;z-index:20}
+.skip:focus{left:0}
+.wrap{width:min(1120px,100% - 2.5rem);margin-inline:auto}
+
+/* header + nav */
+header.site{position:sticky;top:0;z-index:10;background:color-mix(in srgb,var(--deep) 94%,transparent);color:var(--on-deep);padding-top:env(safe-area-inset-top,0px);backdrop-filter:blur(8px)}
+header.site .wrap{display:flex;align-items:center;justify-content:space-between;min-height:72px}
+.logo{font-family:var(--serif);font-size:1.7rem;font-weight:600;text-decoration:none;letter-spacing:.02em}
+.logo span{color:var(--brass)}
+nav ul{display:flex;gap:2rem;list-style:none;margin:0;padding:0}
+nav a{text-decoration:none;font-size:.95rem;padding:.4rem 0;border-bottom:1px solid transparent}
+nav a:hover{border-color:var(--brass)}
+nav .cta{border:1px solid var(--brass);padding:.5rem 1.1rem;border-radius:2px}
+nav .cta:hover{background:var(--brass);color:#fff}
+.menu-btn{display:none;background:none;border:1px solid var(--brass);color:inherit;padding:.5rem .9rem;font:inherit;border-radius:2px;cursor:pointer}
+@media (max-width:760px){
+  .menu-btn{display:block}
+  nav ul{display:none;position:absolute;left:0;right:0;top:100%;flex-direction:column;gap:0;background:var(--deep);padding:.5rem 1.25rem 1.25rem}
+  nav ul.open{display:flex}
+  nav li a{display:block;padding:.9rem 0;border-bottom:1px solid #24424A}
+}
+
+/* hero */
+.hero{background:var(--deep);color:var(--on-deep);position:relative;overflow:hidden;padding:clamp(4rem,12vw,9rem) 0 0}
+.hero h1{font-size:clamp(3rem,9vw,7.5rem);font-weight:400;max-width:12ch;margin-bottom:.35em}
+.hero h1 em{font-style:italic;color:var(--brass)}
+.hero p{font-size:1.2rem;color:#B9CCC8}
+.btn{display:inline-block;background:var(--brass);color:#fff;text-decoration:none;padding:.9rem 1.8rem;border:0;border-radius:2px;font:500 1rem var(--sans);cursor:pointer}
+.btn:hover{filter:brightness(1.1)}
+.btn.ghost{background:none;border:1px solid var(--sea);color:var(--on-deep);margin-left:.75rem}
+.horizon{margin-top:clamp(3rem,8vw,6rem);height:190px;position:relative;
+  background:linear-gradient(180deg,transparent 0,transparent 40%,#2B5A5C 40%,#173D42 100%)}
+.sun{position:absolute;left:62%;top:-70px;width:140px;height:140px;border-radius:50%;background:radial-gradient(circle,#F3D79A 0,#D9A55A 60%,#B9823F 100%);box-shadow:0 0 90px 30px rgba(217,165,90,.35)}
+.horizon::after{content:"";position:absolute;inset:40% 0 0 0;background:repeating-linear-gradient(180deg,rgba(255,255,255,.07) 0 1px,transparent 1px 14px)}
+@media (prefers-reduced-motion:no-preference){.sun{animation:rise 2.4s ease-out both}}
+@keyframes rise{from{transform:translateY(90px);opacity:0}to{transform:none;opacity:1}}
+
+section{padding:clamp(3.5rem,8vw,6.5rem) 0}
+.about .grid{display:grid;grid-template-columns:1.2fr 1fr;gap:clamp(2rem,6vw,5rem);align-items:start}
+.facts{margin:0;padding:0;list-style:none;border-top:1px solid var(--line)}
+.facts li{display:flex;justify-content:space-between;gap:1rem;padding:1.1rem 0;border-bottom:1px solid var(--line)}
+.facts strong{font:500 2rem/1 var(--serif);color:var(--brass)}
+@media (max-width:760px){.about .grid{grid-template-columns:1fr}}
+
+/* hotéis */
+.hotels{background:var(--surface)}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.5rem;margin-top:2.5rem}
+article.hotel{border:1px solid var(--line);display:flex;flex-direction:column;background:var(--bg)}
+.hotel .art{height:150px}
+.art.a{background:linear-gradient(160deg,#E9C98E,#C98B4F 55%,#7A4B34)}
+.art.b{background:linear-gradient(160deg,#B7CBBF,#5F8C7A 55%,#1F4A44)}
+.art.c{background:linear-gradient(160deg,#D8E2E4,#7FA6B5 55%,#2A5870)}
+.art.d{background:linear-gradient(160deg,#EBD9C3,#B89A7A 55%,#5A4636)}
+.hotel div.body{padding:1.4rem;display:flex;flex-direction:column;flex:1}
+.hotel .place{color:var(--brass);font-weight:500;font-size:.9rem;margin:0 0 .3rem}
+.hotel p.desc{color:var(--muted);flex:1}
+.hotel a.more{font-weight:500;text-decoration:none;border-bottom:1px solid var(--brass);align-self:flex-start}
+
+/* experiências */
+.exp-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:2.5rem;margin-top:2.5rem}
+.exp-list h3{font-size:1.5rem;border-top:2px solid var(--brass);padding-top:1rem}
+.exp-list p{color:var(--muted)}
+
+aside.quote{background:var(--deep);color:var(--on-deep);padding:clamp(3rem,7vw,5rem) 0}
+aside.quote blockquote{margin:0;font:italic 400 clamp(1.6rem,3.6vw,2.6rem)/1.3 var(--serif);max-width:28ch}
+aside.quote cite{display:block;margin-top:1.2rem;font:300 .95rem var(--sans);color:var(--sea);font-style:normal}
+
+/* reservas */
+.booking{background:var(--surface)}
+form{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1.2rem;margin-top:2rem;max-width:880px}
+label{display:flex;flex-direction:column;gap:.4rem;font-weight:400;font-size:.95rem}
+input,select{font:inherit;padding:.8rem;border:1px solid var(--line);background:var(--bg);color:var(--ink);border-radius:2px}
+form .btn{align-self:end}
+#msg{margin-top:1.5rem;min-height:1.6em;color:var(--brass);font-weight:500}
+
+/* footer */
+footer.site{background:var(--deep);color:#B9CCC8;padding:3.5rem 0 calc(2rem + env(safe-area-inset-bottom,0px));font-size:.95rem}
+footer .cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:2rem}
+footer h2{font:500 1.2rem var(--serif);color:var(--on-deep);margin-bottom:.8rem}
+footer ul{list-style:none;padding:0;margin:0}
+footer li{padding:.2rem 0}
+footer a{text-decoration:none}
+footer a:hover{color:var(--brass)}
+footer .legal{border-top:1px solid #24424A;margin-top:2.5rem;padding-top:1.2rem;font-size:.85rem}
+</style>
+</head>
+<body>
+<a class="skip" href="#conteudo">Ir para o conteúdo</a>
+
+<header class="site">
+  <div class="wrap">
+    <a class="logo" href="#inicio" aria-label="Solstício Hotéis, página inicial">Solstício<span>.</span></a>
+    <button class="menu-btn" aria-expanded="false" aria-controls="menu">Menu</button>
+    <nav aria-label="Navegação principal">
+      <ul id="menu">
+        <li><a href="#sobre">Sobre</a></li>
+        <li><a href="#hoteis">Hotéis</a></li>
+        <li><a href="#experiencias">Experiências</a></li>
+        <li><a href="#contato">Contato</a></li>
+        <li><a class="cta" href="#reservas">Reservar</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="conteudo">
+  <section class="hero" id="inicio" aria-labelledby="titulo-hero">
+    <div class="wrap">
+      <h1 id="titulo-hero">Hospedagem feita para a <em>melhor luz</em> do dia.</h1>
+      <p>Quatro hotéis de luxo no Brasil e em Portugal, cada um posicionado para o nascer ou o pôr do sol.</p>
+      <p><a class="btn" href="#reservas">Reservar estadia</a><a class="btn ghost" href="#hoteis">Conhecer os hotéis</a></p>
+    </div>
+    <div class="horizon" aria-hidden="true"><div class="sun"></div></div>
+  </section>
+
+  <section class="about" id="sobre" aria-labelledby="titulo-sobre">
+    <div class="wrap grid">
+      <article>
+        <h2 id="titulo-sobre">Uma rede pequena, de propósito</h2>
+        <p>Desde 1998, a Solstício escolhe terrenos onde a paisagem é protagonista e constrói poucos quartos por hotel. Em cada endereço, a orientação das suítes, a altura das janelas e os materiais seguem o caminho do sol.</p>
+        <p>Nossas equipes são formadas na própria região. O hóspede encontra gastronomia local, artesanato de comunidades vizinhas e atendimento por nome, sem pressa.</p>
+      </article>
+      <ul class="facts" aria-label="A Solstício em números">
+        <li><strong>4</strong><span>hotéis em 3 destinos</span></li>
+        <li><strong>1998</strong><span>ano de abertura do primeiro hotel</span></li>
+        <li><strong>38</strong><span>suítes no maior hotel da rede</span></li>
+        <li><strong>1:3</strong><span>funcionários por hóspede</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="hotels" id="hoteis" aria-labelledby="titulo-hoteis">
+    <div class="wrap">
+      <h2 id="titulo-hoteis">Nossos hotéis</h2>
+      <p>Cada endereço tem uma identidade própria. O que se repete é o cuidado.</p>
+      <div class="cards">
+        <article class="hotel">
+          <div class="art a" role="img" aria-label="Tons de areia e pôr do sol"></div>
+          <div class="body">
+            <p class="place">Trancoso, Bahia</p>
+            <h3>Solstício Quadrado</h3>
+            <p class="desc">22 bangalôs entre coqueirais, a 4 minutos a pé da praia dos Nativos. Spa com terapias de ervas locais.</p>
+            <a class="more" href="#reservas">Reservar</a>
+          </div>
+        </article>
+        <article class="hotel">
+          <div class="art b" role="img" aria-label="Tons de verde da serra"></div>
+          <div class="body">
+            <p class="place">Gramado, Rio Grande do Sul</p>
+            <h3>Solstício Serra</h3>
+            <p class="desc">Chalés com lareira e vista para o vale. Restaurante de cozinha autoral com ingredientes da serra gaúcha.</p>
+            <a class="more" href="#reservas">Reservar</a>
+          </div>
+        </article>
+        <article class="hotel">
+          <div class="art c" role="img" aria-label="Tons de azul do mar carioca"></div>
+          <div class="body">
+            <p class="place">Rio de Janeiro</p>
+            <h3>Solstício Leme</h3>
+            <p class="desc">38 suítes de frente para o mar, com terraço no último andar e piscina aquecida durante todo o ano.</p>
+            <a class="more" href="#reservas">Reservar</a>
+          </div>
+        </article>
+        <article class="hotel">
+          <div class="art d" role="img" aria-label="Tons de pedra clara de Lisboa"></div>
+          <div class="body">
+            <p class="place">Lisboa, Portugal</p>
+            <h3>Solstício Alfama</h3>
+            <p class="desc">Palacete do século XVIII restaurado, com 18 quartos e pátio interno. Vista para o Tejo ao entardecer.</p>
+            <a class="more" href="#reservas">Reservar</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="experiencias" aria-labelledby="titulo-exp">
+    <div class="wrap">
+      <h2 id="titulo-exp">Experiências incluídas</h2>
+      <div class="exp-list">
+        <article>
+          <h3>Café da manhã ao nascer do sol</h3>
+          <p>Servido no terraço ou na varanda da suíte, com produtos de pequenos produtores da região.</p>
+        </article>
+        <article>
+          <h3>Spa e bem-estar</h3>
+          <p>Massagens, banhos e rituais criados com ingredientes locais. Reserve o horário junto com a estadia.</p>
+        </article>
+        <article>
+          <h3>Roteiros privativos</h3>
+          <p>Passeios de barco, trilhas e visitas a ateliês, planejados com a nossa equipe de concierge.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <aside class="quote" aria-label="Depoimento de hóspede">
+    <div class="wrap">
+      <blockquote>Acordei com o sol dentro do quarto e entendi por que o hotel se chama assim.</blockquote>
+      <cite>Helena M., hóspede do Solstício Leme</cite>
+    </div>
+  </aside>
+
+  <section class="booking" id="reservas" aria-labelledby="titulo-reservas">
+    <div class="wrap">
+      <h2 id="titulo-reservas">Reserve sua estadia</h2>
+      <p>Informe o hotel e as datas. Nossa equipe confirma a disponibilidade em até 24 horas.</p>
+      <form id="form-reserva" novalidate>
+        <label>Hotel
+          <select name="hotel" required>
+            <option value="">Escolha um hotel</option>
+            <option>Solstício Quadrado, Trancoso</option>
+            <option>Solstício Serra, Gramado</option>
+            <option>Solstício Leme, Rio de Janeiro</option>
+            <option>Solstício Alfama, Lisboa</option>
+          </select>
+        </label>
+        <label>Entrada <input type="date" name="entrada" required></label>
+        <label>Saída <input type="date" name="saida" required></label>
+        <label>Hóspedes
+          <select name="hospedes"><option>1</option><option selected>2</option><option>3</option><option>4</option></select>
+        </label>
+        <label>E-mail <input type="email" name="email" placeholder="voce@exemplo.com" required></label>
+        <button class="btn" type="submit">Solicitar reserva</button>
+      </form>
+      <p id="msg" role="status" aria-live="polite"></p>
+    </div>
+  </section>
+</main>
+
+<footer class="site" id="contato">
+  <div class="wrap">
+    <div class="cols">
+      <section aria-labelledby="f-marca">
+        <h2 id="f-marca">Solstício Hotéis</h2>
+        <p>Hospitalidade de luxo, em poucos quartos e com muita luz.</p>
+      </section>
+      <nav aria-label="Navegação do rodapé">
+        <h2>Explorar</h2>
+        <ul>
+          <li><a href="#sobre">Sobre a rede</a></li>
+          <li><a href="#hoteis">Hotéis</a></li>
+          <li><a href="#experiencias">Experiências</a></li>
+          <li><a href="#reservas">Reservas</a></li>
+        </ul>
+      </nav>
+      <address style="font-style:normal">
+        <h2>Contato</h2>
+        <ul>
+          <li><a href="mailto:reservas@solsticio.example">reservas@solsticio.example</a></li>
+          <li><a href="tel:+551140000000">+55 11 4000-0000</a></li>
+          <li>Atendimento diário, das 8h às 22h</li>
+        </ul>
+      </address>
+    </div>
+    <p class="legal">© 2026 Solstício Hotéis. Todos os direitos reservados. Site fictício para fins de demonstração.</p>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var btn=document.querySelector('.menu-btn'),menu=document.getElementById('menu');
+  btn.addEventListener('click',function(){
+    var open=menu.classList.toggle('open');btn.setAttribute('aria-expanded',open);
+  });
+  menu.addEventListener('click',function(e){
+    if(e.target.tagName==='A'){menu.classList.remove('open');btn.setAttribute('aria-expanded','false');}
+  });
+  var f=document.getElementById('form-reserva'),msg=document.getElementById('msg');
+  var today=new Date().toISOString().slice(0,10);
+  f.entrada.min=today;f.saida.min=today;
+  f.addEventListener('submit',function(e){
+    e.preventDefault();
+    if(!f.hotel.value||!f.entrada.value||!f.saida.value||!f.email.value){msg.textContent='Preencha hotel, datas e e-mail para continuar.';return;}
+    if(f.saida.value<=f.entrada.value){msg.textContent='A data de saída precisa ser depois da entrada.';return;}
+    msg.textContent='Solicitação enviada. Responderemos em '+f.email.value+' em até 24 horas.';
+    f.reset();
+  });
+})();
+</script>
+</body>
+</html>
